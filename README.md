@@ -212,15 +212,7 @@ them.
 ## Testing
 
 ```bash
-composer install
 composer test
-```
-
-Formatting and static analysis:
-
-```bash
-composer lint      # Laravel Pint
-composer analyse   # PHPStan
 ```
 
 ## Documentation
@@ -230,8 +222,9 @@ The full guide, with more examples, lives at
 
 ## Contributing
 
-Issues and pull requests are welcome. Please run `composer test`, `composer lint`, and
-`composer analyse` before opening a pull request.
+Issues and pull requests are welcome. Before opening a pull request, please run the
+test suite (`composer test`), format with Laravel Pint (`composer lint`), and run the
+static analysis (`composer analyse`). The CI workflow runs all three on every push.
 
 ## License
 
