@@ -230,4 +230,5 @@ static analysis (`composer analyse`). The CI workflow runs all three on every pu
 
 ## License
 
-Released under the MIT License. See [LICENSE](LICENSE) for details.
+Released under the MIT License. Copyright &copy; 2026 Virtueplanet Services LLP. See
+[LICENSE](LICENSE) for details.
