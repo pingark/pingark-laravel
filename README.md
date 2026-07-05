@@ -85,15 +85,17 @@ task, a success ping after it finishes, and a failure ping (with the captured ou
 and the command's real exit code) if it fails. PingArk measures the run duration for
 you from the start and finish pings.
 
-The check slug is derived from the task, so `backup:run` pings a check named
-`backuprun`. Pass an explicit slug when you want to name it yourself:
+The check slug is derived from the task name, so `backup:run` pings a check named
+`backuprun`. When you would rather choose the slug yourself, pass it to `pingArk()`.
+The rest of this guide follows one example job, a nightly order import on the check
+`nightly-import`:
 
 ```php
-Schedule::command('reports:weekly')->weeklyOn(1, '08:00')->pingArk('weekly-reports');
+Schedule::command('import:orders')->dailyAt('02:00')->pingArk('nightly-import');
 ```
 
-The slug you pass must match the check in PingArk. Create it in the dashboard, or let
-`pingark:sync` create it for you.
+Whichever slug you use must match the check in PingArk. Create it in the dashboard, or
+let `pingark:sync` create it for you.
 
 ## Register your whole schedule
 
