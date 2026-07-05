@@ -16,6 +16,25 @@ period you choose, PingArk alerts you. This package is the quickest way to wire 
 up in a Laravel application, though PingArk works with any job in any language over a
 plain HTTP request.
 
+- [Full guide](https://pingark.com/docs/laravel-plugin)
+- [Ping API reference](https://pingark.com/docs/ping-api)
+- [Management API reference](https://pingark.com/docs/api)
+
+## Contents
+
+- [What you get](#what-you-get)
+- [Requirements](#requirements)
+- [Install](#installation)
+- [Configure](#configuration)
+- [Quick start: watch a scheduled task](#quick-start-watch-a-scheduled-task)
+- [Register your whole schedule](#register-your-whole-schedule)
+- [Send signals by hand](#send-signals-by-hand)
+  - [Capture an exception](#capture-an-exception-on-failure)
+  - [Report an exit code](#report-an-exit-code)
+  - [Log a progress event](#log-a-progress-event)
+- [Create and manage checks from code](#create-and-manage-checks-from-code)
+- [How it stays out of your way](#how-it-stays-out-of-your-way)
+
 ## What you get
 
 - A one-line `->pingArk()` you chain onto any scheduled task.
