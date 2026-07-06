@@ -17,10 +17,16 @@ return [
     /* Master switch: set PINGARK_ENABLED=false to silence every ping. */
     'enabled' => env('PINGARK_ENABLED', true),
 
-    /* Your PingArk instance (no trailing slash needed). */
-    'base_url' => env('PINGARK_BASE_URL', 'https://pingark.com'),
+    /* The ingestion base URL your pings are sent to (no trailing slash needed). */
+    'base_url' => env('PINGARK_BASE_URL', 'https://ping.pingark.com'),
 
-    /* The project ping key (Project settings -> Ping key). Drives slug pings. */
+    /*
+     * The Management API base URL, used by pingark:sync and PingArk::api(). A
+     * separate surface from ingestion so its security is managed independently.
+     */
+    'api_url' => env('PINGARK_API_URL', 'https://api.pingark.com'),
+
+    /* The project ping key (Project settings -> Project ping key). Drives slug pings. */
     'ping_key' => env('PINGARK_PING_KEY'),
 
     /* A read-write project API key, used by pingark:sync and PingArk::api(). */

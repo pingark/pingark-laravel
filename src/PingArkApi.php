@@ -157,7 +157,7 @@ class PingArkApi
             throw new RuntimeException('Set PINGARK_API_KEY (a read-write project key) to use the PingArk management API.');
         }
 
-        $base = rtrim((string) config('pingark.base_url'), '/');
+        $base = rtrim((string) config('pingark.api_url'), '/');
 
         return Http::baseUrl("{$base}/api/v1")
             ->withToken($apiKey)

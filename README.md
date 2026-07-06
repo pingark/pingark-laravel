@@ -2,7 +2,6 @@
 
 [![Latest version on Packagist](https://img.shields.io/packagist/v/pingark/pingark-laravel.svg)](https://packagist.org/packages/pingark/pingark-laravel)
 [![Tests](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml/badge.svg)](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml)
-[![Total downloads](https://img.shields.io/packagist/dt/pingark/pingark-laravel.svg)](https://packagist.org/packages/pingark/pingark-laravel)
 [![License](https://img.shields.io/packagist/l/pingark/pingark-laravel.svg)](LICENSE)
 
 The official [PingArk](https://pingark.com) integration for Laravel. It watches your
@@ -81,7 +80,8 @@ That is all most applications need. The full set of options lives in `config/pin
 | Option | Env | Default | What it does |
 |---|---|---|---|
 | `enabled` | `PINGARK_ENABLED` | `true` | Master switch. Set to `false` to silence every ping (handy on staging). |
-| `base_url` | `PINGARK_BASE_URL` | `https://pingark.com` | Your PingArk instance. |
+| `base_url` | `PINGARK_BASE_URL` | `https://ping.pingark.com` | The ingestion base URL your pings are sent to. |
+| `api_url` | `PINGARK_API_URL` | `https://api.pingark.com` | The management API base URL, used by `pingark:sync` and `PingArk::api()`. |
 | `ping_key` | `PINGARK_PING_KEY` | `null` | The project ping key that your task pings hit. |
 | `api_key` | `PINGARK_API_KEY` | `null` | A read-write API key, used by `pingark:sync` and `PingArk::api()`. |
 | `default_grace` | `PINGARK_DEFAULT_GRACE` | `600` | Grace period, in seconds, for checks created by `pingark:sync`. |

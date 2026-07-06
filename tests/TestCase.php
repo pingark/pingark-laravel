@@ -46,6 +46,7 @@ abstract class TestCase extends Orchestra
         $app['config']->set('pingark', [
             'enabled' => true,
             'base_url' => 'https://pingark.test',
+            'api_url' => 'https://pingark.test',
             'ping_key' => 'projkey123',
             'api_key' => 'pa_test_key',
             'default_grace' => 600,
