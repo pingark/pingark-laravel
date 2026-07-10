@@ -231,6 +231,9 @@ describe('pingark:sync', function () {
 
         $this->artisan('pingark:sync')
             ->expectsOutputToContain('created: reportssend')
+            // Install-to-signup onboarding: a successful sync points at the
+            // dashboard where the new checks live.
+            ->expectsOutputToContain('https://pingark.com/app/checks')
             ->assertSuccessful();
 
         Http::assertSent(fn ($r) => $r->method() === 'POST'
@@ -255,9 +258,13 @@ describe('pingark:sync', function () {
         Http::assertNotSent(fn ($r) => $r->method() === 'DELETE');
     });
 
-    it('refuses to run without an api key', function () {
+    it('refuses to run without an api key and points at free registration', function () {
         config(['pingark.api_key' => null]);
 
-        $this->artisan('pingark:sync')->assertFailed();
+        // Install-to-signup onboarding: the no-key failure is the first thing
+        // a fresh `composer require` user sees, so it links registration.
+        $this->artisan('pingark:sync')
+            ->expectsOutputToContain('https://pingark.com/register')
+            ->assertFailed();
     });
 });

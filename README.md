@@ -4,16 +4,18 @@
 [![Tests](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml/badge.svg)](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml)
 [![License](https://img.shields.io/packagist/l/pingark/pingark-laravel.svg)](LICENSE)
 
-The official [PingArk](https://pingark.com) integration for Laravel. It watches your
-scheduled tasks so you find out the moment one stops running, and it does the
+Monitor Laravel scheduled tasks and cron jobs, and get alerted the moment one
+silently stops running. The official [PingArk](https://pingark.com) package does the
 plumbing for you: each task pings when it starts and when it finishes, and a failure
-sends the exit code and the error along with it.
+sends the exit code and the actual exception along with it, so you know why a job
+broke, not just that a ping is late.
 
 PingArk is a monitoring service for cron jobs and scheduled tasks. A job sends an
 outbound ping when it runs. If the ping does not arrive on schedule, plus a grace
 period you choose, PingArk alerts you. This package is the quickest way to wire that
 up in a Laravel application, though PingArk works with any job in any language over a
-plain HTTP request.
+plain HTTP request. A [free account](https://pingark.com/register) covers 20 checks
+with no card required.
 
 - [Full guide](https://pingark.com/docs/laravel-plugin)
 - [Ping API reference](https://pingark.com/docs/ping-api)
@@ -228,7 +230,9 @@ signals are a silent no-op.
 
 The `pingark:sync` command and the `PingArk::api()` client are the exception. They are
 setup tools, not part of a running job, so they surface errors rather than hiding
-them.
+them. When `pingark:sync` runs without an API key it also points you at creating a
+free account, and a successful sync prints the dashboard URL where your new checks
+live.
 
 ## Testing
 

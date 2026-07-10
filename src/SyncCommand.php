@@ -33,6 +33,10 @@ class SyncCommand extends Command
     {
         if ((string) config('pingark.api_key') === '') {
             $this->error('Set PINGARK_API_KEY (a read-write project key) to sync.');
+            // Onboarding: this failure is the first thing a fresh
+            // `composer require` user sees, so point at the free account
+            // and the key they need.
+            $this->line('No PingArk account yet? Create your free project at https://pingark.com/register, then generate a read-write key under API keys.');
 
             return self::FAILURE;
         }
@@ -77,6 +81,7 @@ class SyncCommand extends Command
         }
 
         $this->info("sync complete: {$created} created, {$skipped} already present");
+        $this->line('See these checks on your dashboard: https://pingark.com/app/checks');
 
         if ($this->option('prune')) {
             $this->reportOrphans($existing, $scheduled);
