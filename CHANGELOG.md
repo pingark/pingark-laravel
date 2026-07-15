@@ -12,7 +12,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   points at creating a free PingArk account, and a successful sync prints the
   dashboard URL where the new checks live.
 
-## [1.0.0] - 2026-07-03
+## [1.0.0] - 2026-07-15
 
 Initial public release.
 
