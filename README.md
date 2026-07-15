@@ -1,8 +1,8 @@
 # PingArk for Laravel
 
-[![Latest version on Packagist](https://img.shields.io/packagist/v/pingark/pingark-laravel.svg)](https://packagist.org/packages/pingark/pingark-laravel)
+[![Latest version on Packagist](https://img.shields.io/packagist/v/pingark/pingark-laravel)](https://packagist.org/packages/pingark/pingark-laravel)
 [![Tests](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml/badge.svg)](https://github.com/pingark/pingark-laravel/actions/workflows/tests.yml)
-[![License](https://img.shields.io/packagist/l/pingark/pingark-laravel.svg)](LICENSE)
+[![License](https://img.shields.io/packagist/l/pingark/pingark-laravel)](LICENSE)
 
 Monitor Laravel scheduled tasks and cron jobs, and get alerted the moment one
 silently stops running. The official [PingArk](https://pingark.com) package does the
