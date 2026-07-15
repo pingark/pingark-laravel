@@ -50,8 +50,8 @@ with no card required.
 
 ## Requirements
 
-- PHP 8.2 or newer
-- Laravel 11, 12, or 13
+- PHP 8.3 or newer
+- Laravel 12 or 13
 
 ## Installation
 
